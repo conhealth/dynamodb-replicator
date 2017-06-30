@@ -5,6 +5,7 @@ var s3urls = require('s3urls');
 var Dyno = require('dyno');
 var crypto = require('crypto');
 var AWS = require('aws-sdk');
+require('../aws-mfa')(AWS);
 var s3 = new AWS.S3();
 var assert = require('assert');
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var AWS = require('aws-sdk');
+require('../aws-mfa')(AWS);
 var args = require('minimist')(process.argv.slice(2));
 var s3urls = require('s3urls');
 var fastlog = require('fastlog');

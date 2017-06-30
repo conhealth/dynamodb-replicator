@@ -1,4 +1,5 @@
 var AWS = require('aws-sdk');
+require('./aws-mfa')(AWS);
 var s3scan = require('s3scan');
 var zlib = require('zlib');
 var stream = require('stream');

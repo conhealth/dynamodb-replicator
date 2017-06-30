@@ -4,6 +4,7 @@ var minimist = require('minimist');
 var s3urls = require('s3urls');
 var crypto = require('crypto');
 var AWS = require('aws-sdk');
+require('../aws-mfa')(AWS);
 var s3 = new AWS.S3();
 var queue = require('queue-async');
 var Dyno = require('dyno');

@@ -6,6 +6,7 @@ var args = require('minimist')(process.argv.slice(2));
 var crypto = require('crypto');
 var s3urls = require('s3urls');
 var AWS = require('aws-sdk');
+require('../aws-mfa')(AWS);
 
 function usage() {
     console.error('');
