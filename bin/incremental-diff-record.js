@@ -8,6 +8,7 @@ var AWS = require('aws-sdk');
 require('../aws-mfa')(AWS);
 var s3 = new AWS.S3();
 var assert = require('assert');
+var joinPath = require('path.join');
 
 var args = minimist(process.argv.slice(2));
 
@@ -70,13 +71,13 @@ try {
 catch (err) { key = JSON.parse(key); }
 
 
-s3url.Key = [
+s3url.Key = joinPath(
     s3url.Key,
     table,
     crypto.createHash('md5')
         .update(Dyno.serialize(key))
         .digest('hex')
-].join('/');
+);
 
 var dyno = Dyno({
     region: region,
