@@ -1,5 +1,5 @@
 var AWS = require('aws-sdk');
-require('../aws-mfa')(AWS);
+require('./aws-mfa')(AWS);
 var Dyno = require('dyno');
 var queue = require('queue-async');
 var crypto = require('crypto');
