@@ -4,6 +4,9 @@
 module.exports = function(AWS) {
   const ini = require('ini');
   const fs=require('fs');
+  if (!fs.existsSync(`${process.env.HOME}/.aws/config`)) {
+    return;
+  }
   fs.readFileSync(
         `${process.env.HOME}/.aws/config`,
         'utf-8'
